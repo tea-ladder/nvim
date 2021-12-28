@@ -1,5 +1,9 @@
+" split で右に開く
 set splitright
+" split で下に開く
+set splitbelow
 set clipboard=unnamed
+" カレントディレクトリ
 set autochdir
 "文字コードをUFT-8に設定
 set fenc=utf-8
