@@ -39,8 +39,6 @@ vim.opt.showcmd = true
 vim.opt.number = true
 -- 現在の行を強調表示
 vim.opt.cursorline = true
--- 行末の1文字先までカーソルを移動できるように
-vim.opt.virtualedit = "onemore"
 -- インデントはスマートインデント
 vim.opt.smartindent = true
 -- ビープ音を可視化

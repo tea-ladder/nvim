@@ -4,7 +4,6 @@ local lspconfig = require('lspconfig')
 local mason_lspconfig = require('mason-lspconfig')
 
 vim.lsp.set_log_level('off')
---vim.lsp.set_log_level('debug')
 
 mason.setup()
 mason_lspconfig.setup()
