@@ -71,7 +71,7 @@ Plug 'j-hui/fidget.nvim'
 Plug 'kat0h/bufpreview.vim', { 'do': 'deno task prepare' }
 
 "" silicon
-Plug 'skanehira/denops-silicon.vim'
+Plug 'skanehira/denops-silicon.vim' " deno install https://deno.land/x/silicon/silicon.ts
 
 call plug#end()
 ]]
