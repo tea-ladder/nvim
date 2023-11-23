@@ -20,6 +20,12 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-bookmark.vim'
 
+"" neovim lua function
+Plug 'nvim-lua/plenary.nvim'
+
+"" none-ls
+Plug 'nvimtools/none-ls.nvim'
+
 "" line
 Plug 'vim-airline/vim-airline'
 
@@ -53,11 +59,19 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'onsails/lspkind.nvim'
 
 "" vsnip
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/cmp-vsnip'
+"" lsp server
+Plug 'j-hui/fidget.nvim'
 
+"" markdwon preview
+Plug 'kat0h/bufpreview.vim', { 'do': 'deno task prepare' }
+
+"" silicon
+Plug 'skanehira/denops-silicon.vim'
 
 call plug#end()
 ]]
@@ -78,4 +92,6 @@ require('plugins.lsp')
 require('plugins.completion')
 require('plugins.quick-run')
 require('plugins.ripgrep')
+require('plugins.fidget')
+require('plugins.none-ls')
 

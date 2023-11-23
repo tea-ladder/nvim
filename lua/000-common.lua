@@ -1,7 +1,7 @@
 -- font
-vim.api.nvim_set_keymap('n', '<Localleader>f', ':set guifont=Cica:h', { noremap = true })
-vim.opt.guifont = "Cica:h20"
-vim.opt.guifontwide = "Cica:h20"
+vim.api.nvim_set_keymap('n', '<Localleader>f', ':set guifont=Hack Nerd Font Mono:h', { noremap = true })
+vim.opt.guifont = "Hack Nerd Font Mono:h20"
+vim.opt.guifontwide = "Hack Nerd Font Mono:h20"
 
 -- tab
 vim.api.nvim_set_keymap('n', '<F1>', ':tabnew $MYVIMRC<CR>', {noremap = true})
