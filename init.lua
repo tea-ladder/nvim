@@ -54,11 +54,13 @@ Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 
 "" nvim-cmp
+Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
+
+"" icons
 Plug 'onsails/lspkind.nvim'
 
 "" vsnip
@@ -71,7 +73,13 @@ Plug 'j-hui/fidget.nvim'
 Plug 'kat0h/bufpreview.vim', { 'do': 'deno task prepare' }
 
 "" silicon
-Plug 'skanehira/denops-silicon.vim' " deno install https://deno.land/x/silicon/silicon.ts
+Plug 'skanehira/denops-silicon.vim' " depends: deno isntall https://deno.land/x/silicon/mod.ts
+
+"" skk
+Plug 'vim-skk/skkeleton'
+""" cmp-source
+Plug 'rinx/cmp-skkeleton'
+
 
 call plug#end()
 ]]
@@ -94,4 +102,6 @@ require('plugins.quick-run')
 require('plugins.ripgrep')
 require('plugins.fidget')
 require('plugins.none-ls')
+require('plugins.silicon')
+require('plugins.skkeleton')
 
