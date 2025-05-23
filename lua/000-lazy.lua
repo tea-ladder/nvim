@@ -42,26 +42,13 @@ require("lazy").setup({
           require'alpha'.setup(require'alpha.themes.dashboard'.config)
         end
       },
-      -- bookmark
-      {
-        'crusj/bookmarks.nvim',
-        keys = {
-          { "<tab><tab>", mode = { "n" } },
-        },
-        branch = 'main',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = function()
-          require("bookmarks").setup()
-          require("telescope").load_extension("bookmarks")
-        end
-      },
       -- terminal
       {
         'akinsho/toggleterm.nvim',
         config = true,
         opts = {
           open_mapping = [[<c-t>]],
-          direction = 'float',
+          direction = 'tab',
           shade_terminals = true,
           shading_factor = 2,
           persist_size = true,
@@ -81,6 +68,14 @@ require("lazy").setup({
         'vim-airline/vim-airline',
       },
 
+      -- neogit
+      {
+        "NeogitOrg/neogit",
+        dependencies = {
+          "nvim-lua/plenary.nvim",         -- required
+          "sindrets/diffview.nvim",        -- optional - Diff integration
+        },
+      },
       -- neovim lua function
       {'nvim-lua/plenary.nvim'},
 
@@ -101,8 +96,8 @@ require("lazy").setup({
       {'mattn/vim-maketable'},
 
       -- nvim-lspconfig
-      {'williamboman/mason.nvim'},
-      {'williamboman/mason-lspconfig.nvim'},
+      {'mason-org/mason.nvim'},
+      {'mason-org/mason-lspconfig.nvim'},
       {'neovim/nvim-lspconfig'},
 
       -- nvim-cmp
@@ -124,4 +119,6 @@ require("lazy").setup({
 
       -- silicon
       {'skanehira/denops-silicon.vim'},
+      -- org
+
 })

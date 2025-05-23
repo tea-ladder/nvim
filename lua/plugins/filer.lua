@@ -19,6 +19,7 @@ require'lir'.setup {
     ['v'] = actions.vsplit,
     ['t'] = actions.tabedit,
     ['h']     = actions.up,
+    ['<BS>']     = actions.up,
     ['q']     = actions.quit,
     ['K']     = actions.mkdir,
     ['N']     = actions.newfile,
