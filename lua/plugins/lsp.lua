@@ -48,6 +48,11 @@ require("mason-lspconfig").setup()
 -- --  end,
 -- --})
 
+-- format
+vim.cmd('command! LspFormat :lua vim.lsp.buf.format()')
+
+-- diagnostic floating window settings
+
 -- 手動で診断フローティングを閉じたかどうかを追跡するフラグ
 local manual_diagnostic_float_closed = false
 

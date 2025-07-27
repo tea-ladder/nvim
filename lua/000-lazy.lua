@@ -106,6 +106,7 @@ require("lazy").setup({
       {'hrsh7th/cmp-buffer'},
       {'hrsh7th/cmp-path'},
       {'hrsh7th/cmp-cmdline'},
+      {"uga-rosa/cmp-skkeleton"},
 
       -- none-ls
       {'nvimtools/none-ls.nvim'},
@@ -120,5 +121,106 @@ require("lazy").setup({
       -- silicon
       {'skanehira/denops-silicon.vim'},
       -- org
+      {
+        'nvim-orgmode/orgmode',
+        event = 'VeryLazy',
+        ft = { 'org' },
+        config = function()
+          -- Setup orgmode
+          require('orgmode').setup({
+            org_agenda_files = '~/org/tasks.org',
+            org_default_notes_file = '~/org/tasks.org',
+            org_todo_keywords = {'TODO(t)', 'REMD(r)', 'WAIT(w)', '|', 'DONE(d)', 'SKIP(x)'},
+            win_split_mode = 'vertical',
+            mappings = {
+              org = {
+                 org_clock_in = { '<Localleader>ci', desc = 'Clock in headline under cursor.' },
+                 org_clock_out = { '<Localleader>co', desc = 'Clock out headline under cursor.' },
+              }
+            }
+          })
+ 
+          -- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
+          -- add ~org~ to ignore_install
+          -- require('nvim-treesitter.configs').setup({
+          --   ensure_installed = 'all',
+          --   ignore_install = { 'org' },
+          -- })
+        end,
+      },
+      -- yazi
+      {
+        "mikavilpas/yazi.nvim",
+        event = "VeryLazy",
+        dependencies = {
+          -- check the installation instructions at
+          -- https://github.com/folke/snacks.nvim
+          "folke/snacks.nvim"
+        },
+        keys = {
+          -- 👇 in this section, choose your own keymappings!
+          {
+            "<Localleader>E",
+            mode = { "n" },
+            "<cmd>Yazi<cr>",
+            desc = "Open yazi at the current file",
+          },
+          -- {
+          --   -- Open in the current working directory
+          --   "<leader>cw",
+          --   "<cmd>Yazi cwd<cr>",
+          --   desc = "Open the file manager in nvim's working directory",
+          -- },
+          --{
+          --  "<c-up>",
+          --  "<cmd>Yazi toggle<cr>",
+          --  desc = "Resume the last yazi session",
+          --},
+        },
+        ---@type YaziConfig | {}
+        opts = {
+          -- if you want to open yazi instead of netrw, see below for more info
+          open_for_directories = false,
+          --keymaps = {
+          --  show_help = "<f1>",
+          --},
+        },
+        -- 👇 if you use `open_for_directories=true`, this is recommended
+        -- init = function()
+        --   -- More details: https://github.com/mikavilpas/yazi.nvim/issues/802
+        --   -- vim.g.loaded_netrw = 1
+        --   vim.g.loaded_netrwPlugin = 1
+        -- end,
+      },
 
+      -- skk
+      -- {
+      --   "vim-skk/skkeleton",
+      --   dependencies = {
+      --     "vim-denops/denops.vim",
+      --     {
+      --       "delphinus/skkeleton_indicator.nvim",
+      --       event = { "VeryLazy", "InsertEnter", "CmdlineEnter", "CmdwinEnter" },
+      --       opts = { fadeOutMs = 0 },
+      --       config = function()
+      --         require("skkeleton_indicator").setup()
+      --       end,
+      --     },
+      --   },
+      --   keys = {
+      --     {
+      --       "<C-k>",
+      --       mode = { "i" },
+      --       "<Plug>(skkeleton-toggle)",
+      --       desc = "skk toggle",
+      --     },
+      --   },
+      --   config = function()
+      --     vim.fn['skkeleton#config']({
+      --       globalDictionaries = {  "~/.local/SKK-JISYO.L" },
+      --       eggLikeNewline = true,
+      --       showCandidatesCount = 2,
+      --     })
+      --   end,
+      -- },
 })

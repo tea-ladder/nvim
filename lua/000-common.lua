@@ -2,7 +2,7 @@
 vim.api.nvim_set_keymap('n', '<Localleader>f', ':set guifont="Hack Nerd Font Mono":h', { noremap = true })
 vim.opt.guifont = "Hack Nerd Font Mono:h14"
 vim.opt.guifontwide = "Hack Nerd Font Mono:h14"
-
+vim.cmd('language en_US.utf8')
 -- tab
 vim.api.nvim_set_keymap('n', '<F1>', ':tabnew $MYVIMRC<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<C-Tab>', ':tabnext<CR>', {noremap = true})
@@ -12,6 +12,7 @@ vim.api.nvim_set_keymap('n', '<C-S-Tab>', ':tabprev<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', 'x', '"_x', {noremap = true})
 vim.api.nvim_set_keymap('n', 'd', '"_d', {noremap = true})
 vim.api.nvim_set_keymap('n', 'D', '"_D', {noremap = true})
+vim.api.nvim_set_keymap('i', 'jj', '<ESC>', { noremap = true, silent = true })
 vim.g.maplocalleader = ','
 
 -- 補完系
@@ -80,3 +81,9 @@ vim.opt.wrapscan = true
 vim.opt.hlsearch = true
 -- ESC連打でハイライト解除
 vim.api.nvim_set_keymap('n', '<Esc><Esc>', ':nohlsearch<CR><Esc>', {noremap = true})
+
+-- neovide
+-- if vim.g.neovide then
+--   vim.g.neovide_opacity = 0.0
+vim.g.transparency = 0.3
+-- end
